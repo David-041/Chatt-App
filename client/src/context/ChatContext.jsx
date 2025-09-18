@@ -28,7 +28,7 @@ export const ChatContextProvider = ({ children, user }) => {
   console.log("notifications", notifications);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io(import.meta.env.VITE_SOCKET_URL);
     setSocket(newSocket);
 
     return () =>{
